@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>WaveForm Login</title>
+</head>
+
+<body>
+    <!-- Background Audio -->
+    <audio autoplay loop>
+        <source src="audio/Intro - Pokémon Ruby & Sapphire [High Quality].mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/waveform_logo.png" alt="Waveform Logo">
+                WaveForm
+            </div>
+        </nav>
+    </header>
+
+    <div class="login-box">
+        <h1>Login to WaveForm</h1>
+        <form method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">Username:</label>
+                <input type="text" name="user_name" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="user_password" id="password" required>
+            </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p class="signup-link">Don't have an account? <a href="signup.html">Sign up for WaveForm</a></p>
+    </div>
+
+    <!-- Incorrect Password Box -->
+    <div class="incorrect-password">
+        Incorrect Password!
+    </div>
+
+    <script>
+        function validateForm() {
+            // Get the form elements
+            const usernameInput = document.getElementById("username");
+            const passwordInput = document.getElementById("password");
+            
+            // Validate username field
+            if (usernameInput.value.trim() === "") {
+                alert("Username field cannot be empty!");
+                usernameInput.focus();
+                return false;
+            }
+            
+            // Validate password field
+            if (passwordInput.value.trim() === "") {
+                alert("Password field cannot be empty!");
+                passwordInput.focus();
+                return false;
+            }
+            
+            // You can add more sophisticated validation logic here if needed
+            
+            return true;
+        }
+    </script>
+</body>
+</html>

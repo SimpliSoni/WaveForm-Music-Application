@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>WaveForm Signup</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="img/waveform_logo.png" alt="Waveform Logo">
+                WaveForm
+            </div>
+        </nav>
+    </header>
+
+    <div class="signup-box">
+        <h1>Sign Up for WaveForm</h1>
+        <form method="post" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="user_name">Full Name:</label>
+                <input type="text" id="user_name" name="user_name" required>
+            </div>
+            <div class="form-group">
+                <label for="user_email">Email Address:</label>
+                <input type="email" id="user_email" name="user_email" required>
+            </div>
+            <div class="form-group">
+                <label for="user_password">Password:</label>
+                <input type="password" id="user_password" name="user_password" required>
+            </div>
+            <div class="form-group">
+                <label for="re-password">Re-enter Password:</label>
+                <input type="password" id="re-password" name="user_re_password" required>
+            </div>
+            <div class="terms-privacy">
+                <input type="checkbox" id="remember_me" name="remember_me">
+                <label for="remember_me">Remember Me</label>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-link">You have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <!-- Incorrect Password Box -->
+    <div class="incorrect-password">
+        Incorrect Password!
+    </div>
+
+    <script>
+        function validateForm() {
+            var fullName = document.getElementById("user_name").value;
+            var email = document.getElementById("user_email").value;
+            var password = document.getElementById("user_password").value;
+            var confirmPassword = document.getElementById("re-password").value;
+
+            // Check if Full Name is not empty
+            if (fullName === "") {
+                alert("Please enter your Full Name.");
+                return false;
+            }
+
+            // Check if Email Address is valid
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid Email Address.");
+                return false;
+            }
+
+            // Check if Password is at least 6 characters long
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            // Check if Passwords match
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            // Check if the Remember Me checkbox is checked (optional)
+            var rememberMe = document.getElementById("remember_me").checked;
+            if (rememberMe) {
+                console.log("Remember Me is checked.");
+            }
+
+            // If all validations pass, the form will be submitted
+            return true;
+        }
+    </script>
+</body>
+</html>
