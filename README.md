@@ -23,10 +23,16 @@ WaveForm is an interactive, web-based music streaming interface designed to prov
 
 ```
 WaveForm/
-|-- index.html
-|-- style.css
-|-- img
+|-- LICENSE
 |-- README.md
+|-- app.js
+|-- arjit.html
+|-- arjit.js
+|-- audio/
+|-- img/
+|-- index.html
+|-- login/
+|-- style.css
 ```
 
 ## Setup and Usage
