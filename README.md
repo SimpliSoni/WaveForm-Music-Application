@@ -4,6 +4,9 @@
 
 WaveForm is an interactive, web-based music streaming interface designed to provide users with an enjoyable listening experience. It includes a playlist section, a song library with controls, and an artist showcase, all styled with modern web technologies.
 
+![image](https://github.com/user-attachments/assets/f1356347-f487-43a9-8c93-64e8f4d37bd3)
+
+
 ## Features
 
 - **Header and Menu Section**: Includes a header with a navigation menu offering quick access to sections like "Discover," "My Library," and "Radio."
